@@ -1,0 +1,120 @@
+﻿@model AseguradoraMVC.Models.Viewmodels.AgregarClienteViewmodels
+
+@{
+    ViewBag.Title = "Crear Cliente";
+    //List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+}
+
+<h2> @ViewBag.Title</h2>
+@using (Html.BeginForm("Nuevo", "Cliente", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-md-12" align="center">
+            <br />  <br />
+
+            <table class="default">
+                <tr>
+
+                    <td width="100"><br />@Html.LabelFor(d => d.Cedula)</td>
+
+                    <td width="300">
+                        <br />
+                        <div>
+                            @Html.TextBoxFor(d => d.Cedula, "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(d => d.Cedula, null, new { @class = "red" })
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td width="100"><br />@Html.LabelFor(d => d.Nombre)</td>
+
+                    <td width="300">
+                        <br />
+                        <div>
+
+                            @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "red" })
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td width="100"> <br />@Html.LabelFor(d => d.Edad)</td>
+
+                    <td width="300">
+                        <br />
+                        <div>
+
+                            @Html.TextBoxFor(d => d.Edad, "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(d => d.Edad, null, new { @class = "red" })
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td width="100"> <br />@Html.LabelFor(d => d.Telefono)</td>
+
+                    <td width="300">
+                        <br />
+                        <div>
+
+                            @Html.TextBoxFor(d => d.Telefono, "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(d => d.Telefono, null, new { @class = "red" })
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td width="100"> <br />@Html.LabelFor(d => d.Codigoseguro)</td>
+
+                    <td width="300">
+                        <br />
+                        <div>
+
+                            @Html.TextBoxFor(d => d.Codigoseguro, "", new { @class = "form-control" })
+
+                            @Html.ValidationMessageFor(d => d.Codigoseguro, null, new { @class = "red" })
+                        </div>
+                    </td>
+
+                </tr>
+
+            </table>
+            <br />
+            <br />
+            <div style="text-align:center;padding:5px">
+                <input type="button" value="Cancelar" class="btn btn-danger" onClick="history.go(-1);">
+                <input value="Guardar" href="~/Cliente/Nuevo" class="btn btn-primary" type="submit" input />
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+
+}
+<style>
+    .col-md-12 {
+        width: 100%;
+        background-color: aliceblue;
+    }
+</style>
+<script>
+    $("#Cancelar1").click(function () {
+        $("#nombre1").prop("disabled", true);
+        $("#apellido1").prop("disabled", true);
+    });
+ </script>
+
+    

@@ -1,0 +1,93 @@
+﻿@model AseguradoraMVC.Models.Viewmodels.AgregarSeguroViewmodels
+
+@{
+    ViewBag.Title = "Crear Seguro";
+}
+
+<h2> @ViewBag.Title</h2>
+@using (Html.BeginForm("Nuevo", "Seguros", FormMethod.Post))
+{
+
+
+
+
+    <div class="row">
+        <div class="col-md-12" align="center">
+            <br />  <br />
+            @*<div>
+
+            @Html.LabelFor(d => d.Codigo)
+            @Html.TextBoxFor(d => d.Codigo, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Codigo, null, new { @class = "red" })
+        </div>*@
+            <table class="default">
+
+                <tr>
+
+                    <td width="100"><br />@Html.LabelFor(d => d.Nombre)</td>
+
+                    <td width="300">
+                        <br />
+                        <div>
+
+                            @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "red" })
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td width="100"> <br />@Html.LabelFor(d => d.Prima)</td>
+
+                    <td width="300">
+                        <br />
+                        <div>
+
+                            @Html.TextBoxFor(d => d.Prima, "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(d => d.Prima, null, new { @class = "red" })
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td width="100"> <br />@Html.LabelFor(d => d.Suma)</td>
+
+                    <td width="300">
+                        <br />
+                        <div>
+
+                            @Html.TextBoxFor(d => d.Suma, "", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(d => d.Suma, null, new { @class = "red" })
+                        </div>
+                    </td>
+
+                </tr>
+
+            </table>
+            <br />
+            <br />
+            <div style="text-align:center;padding:5px">
+           
+                <input type="button" value="Cancelar"  class="btn btn-danger" onClick="history.go(-1);">
+                <input value="Guardar" href="~/Cliente/Nuevo" class="btn btn-primary" type="submit" input />
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+
+}
+<style>
+    .col-md-12 {
+        width: 100%;
+        background-color: aliceblue;
+    }
+</style>
+
+

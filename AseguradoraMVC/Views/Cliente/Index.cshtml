@@ -1,0 +1,68 @@
+﻿@model List<AseguradoraMVC.Models.Viewmodels.AgregarClienteViewmodels>
+@{
+    ViewBag.Title = "Cliente";
+ 
+}
+<h2>@ViewBag.Title</h2>
+
+@*FILTRO DE BÚSQUEDA*@
+<div class="text-right form-inline">
+    <form method="get" action=@Url.Action("Busqueda", "Cliente" )>
+        <div class="form-group">
+            @Html.TextBox("buscar", null, new
+            {
+                placeholder = "Filtro de búsqueda",
+                                    @class = "form-control"
+            })
+        </div>
+        <button class="btn btn-success" type="submit">Buscar</button>
+    </form>
+</div>
+<div class="row" style="text-align:right;padding:5px">
+    <a href="~/Home/Index"> <img src="~/Content/Image/atras.png" alt="" width="45" height="40" title="Atras"> </a>
+    <a href="~/Cliente/Nuevo"> <img src="~/Content/Image/agregarcliente.png" alt="" width="45" height="40" title="Agregar"> </a>
+
+</div>
+<div class="row">
+    <div class=" col-md-12">
+        <table align="center">
+            <tr>
+                <th height="40" width="150" bgcolor="#85C1E9">ID</th>
+                <th height="40" width="150" bgcolor="#85C1E9">Cédula</th>
+                <th height="40" width="150" bgcolor="#85C1E9">Nombre</th>
+                <th height="40" width="150" bgcolor="#85C1E9">Teléfono</th>
+                <th height="40" width="150" bgcolor="#85C1E9">Edad</th>
+                <th height="40" width="150" bgcolor="#85C1E9">Cod. Seguro</th>
+                <th height="40" width="80" bgcolor="#85C1E9"></th>
+            </tr>
+            @foreach (var oElemento1 in Model)
+            {
+                <tr>
+                    <td height="35" width="150" align="center">@oElemento1.IdCliente</td>
+                    <td height="35" width="150" align="center">@oElemento1.Cedula</td>
+                    <td height="35" width="150" align="center"> @oElemento1.Nombre</td>
+                    <td height="35" width="150" align="center"> @oElemento1.Telefono</td>
+                    <td height="35" width="150" align="center"> @oElemento1.Edad</td>
+                    <td height="35" width="150" align="center"> @oElemento1.Codigoseguro</td>
+                    <td>
+                        <a href="~/Cliente/Editar/@oElemento1.IdCliente"> <img src="~/Content/Image/Editar.png" alt="" width="20" height="20" title="Editar"> </a>
+                        <a href="~/Cliente/Eliminar/@oElemento1.IdCliente"> <img src="~/Content/Image/Eliminar.png" alt="" width="20" height="20" title="Eliminar"> </a>
+
+                    </td>
+
+
+
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<style>
+    th {
+        text-align: center;
+    }
+
+    btnatras {
+        background-image: url(/Content/Image/Logo.png);
+    }
+</style>
