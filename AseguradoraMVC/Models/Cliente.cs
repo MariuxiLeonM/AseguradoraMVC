@@ -24,4 +24,3 @@ namespace AseguradoraMVC.Models
         public virtual Seguros Seguros { get; set; }
     }
 }
-

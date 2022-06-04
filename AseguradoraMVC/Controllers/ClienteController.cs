@@ -24,7 +24,7 @@ namespace AseguradoraMVC.Controllers
                                Nombre = d.Nombre,
                                Telefono = d.Telefono,
                                Edad = d.Edad,
-                               Codigoseguro = d.Codigoseguro
+                               Codigoseguro = (int)d.Codigoseguro
                            }).ToList();
             }
 
